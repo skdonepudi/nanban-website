@@ -17,7 +17,7 @@ Meta.defaultProps = {
   title: "Selah Earth Foundation",
   keyword:
     "bitcoin, blockchain, crypto, crypto collectibles, crypto makretplace, cryptocurrency, digital items, market, nft, nft marketplace, nft next js, NFT react, non-fungible tokens, virtual asset, wallet",
-  desc: "The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.",
+  desc: "At Selah Earth, we believe that change starts from the ground up. That&apos;s why we&apos;re focused on building a better future for the earth, one project at a time. .",
 };
 
 export default Meta;

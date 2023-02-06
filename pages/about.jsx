@@ -19,19 +19,20 @@ function About() {
             </h1>
             <p className="dark:text-jacarta-300 text-lg leading-normal">
               <span className="pr-8"></span>At Selah Earth, we believe that
-              change starts from the ground up. That's why we're focused on
-              building a better future for the earth, one project at a time. We
-              promote sustainable practices, such as planting trees, practicing
-              organic farming, and cleaning water bodies. These small steps can
-              have a significant impact, helping to restore the earth's natural
-              balance and protect our planet for future generations. But we
-              don't stop there. We also believe in the power of community and
-              the importance of working together to create lasting change.
-              That's why we engage with local communities, encouraging everyone
-              to participate and make a difference. Whether by planting a tree,
-              cleaning up a local waterbody, or simply spreading the word about
-              the importance of sustainability, everyone has a role to play in
-              transforming the world from the roots up.
+              change starts from the ground up. That&apos;s why we&apos;re
+              focused on building a better future for the earth, one project at
+              a time. We promote sustainable practices, such as planting trees,
+              practicing organic farming, and cleaning water bodies. These small
+              steps can have a significant impact, helping to restore the
+              earth&apos;s natural balance and protect our planet for future
+              generations. But we don&apos;t stop there. We also believe in the
+              power of community and the importance of working together to
+              create lasting change. That&apos;s why we engage with local
+              communities, encouraging everyone to participate and make a
+              difference. Whether by planting a tree, cleaning up a local
+              waterbody, or simply spreading the word about the importance of
+              sustainability, everyone has a role to play in transforming the
+              world from the roots up.
             </p>
             <br />
             <p className="dark:text-jacarta-300 text-lg leading-normal">

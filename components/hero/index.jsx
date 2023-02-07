@@ -26,7 +26,7 @@ const Hero_2 = () => {
         <div className="container flex flex-col justify-between mt-12">
           <div className="py-24 text-center">
             <h1 className="text-jacarta-700 font-display mb-10 text-5xl dark:text-white lg:text-2xl xl:text-6xl">
-              Reviving the earth, restoring the hope
+              Pause , Reflect , Revive Mother Earth
             </h1>
             <p className="dark:text-jacarta-200 mb-10 text-lg normal-case">
               Building a greener future, one project at a time

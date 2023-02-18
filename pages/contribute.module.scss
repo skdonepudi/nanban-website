@@ -1,0 +1,11 @@
+@use "../styles/tokens.scss";
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+}

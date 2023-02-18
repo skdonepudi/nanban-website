@@ -1,0 +1,35 @@
+{
+	"name": "Nanban Gold Class #1",
+	"symbol": "NBN",
+	"image": "https://arweave.net/KDXFJkqP4iPxqM0wwG4vc-P0_-AC1F0uKt5eYPl-9Vw?ext=jpg",
+	"description": "This NFT signifies your donation to the Nanban Foundation.",
+	"seller_fee_basis_points": 818,
+	"collection": {
+		"name": "Nanban Foundation"
+	},
+	"attributes": [
+		{
+			"trait_type": "class",
+			"value": "gold"
+		},
+		{
+			"trait_type": "id",
+			"value": "1"
+		}
+	],
+	"properties": {
+		"files": [
+			{
+				"uri": "https://arweave.net/KDXFJkqP4iPxqM0wwG4vc-P0_-AC1F0uKt5eYPl-9Vw?ext=jpg",
+				"type": "image/jpg"
+			}
+		],
+		"category": "image",
+		"creators": [
+			{
+				"address": "BRtCybNZngZ5cSg9Y3bQHGKEd8Dd2Qv6dy5F27YHGsXN",
+				"share": 100
+			}
+		]
+	}
+}

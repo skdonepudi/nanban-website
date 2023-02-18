@@ -1,0 +1,35 @@
+{
+	"name": "Nanban Silver Class #1",
+	"symbol": "NBN",
+	"image": "https://arweave.net/BE3zHMtI0p2TshTHGdqJOqusfXpzc6jzfSZrMDogdCs",
+	"description": "This NFT signifies your donation to the Nanban Foundation.",
+	"seller_fee_basis_points": 200,
+	"collection": {
+		"name": "Nanban Foundation"
+	},
+	"attributes": [
+		{
+			"trait_type": "class",
+			"value": "silver"
+		},
+		{
+			"trait_type": "id",
+			"value": "1"
+		}
+	],
+	"properties": {
+		"files": [
+			{
+				"uri": "https://arweave.net/BE3zHMtI0p2TshTHGdqJOqusfXpzc6jzfSZrMDogdCs",
+				"type": "image/jpg"
+			}
+		],
+		"category": "image",
+		"creators": [
+			{
+				"address": "Ga9vkrDkr65cGj2koDWM9kXZAVUAwZbjTMGZYP9vEF9U",
+				"share": 100
+			}
+		]
+	}
+}

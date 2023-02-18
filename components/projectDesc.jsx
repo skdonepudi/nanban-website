@@ -1,12 +1,14 @@
-const ImageComponent = () => {
+import Link from "next/link";
+
+const ImageComponent = ({imageSrc}) => {
   return (
     <div className="lg:w-[55%]">
-      <div className="relative">
+      <div className="relative grayscale hover:grayscale-0">
         <img
-          src="/images/project.jpg"
+          src={imageSrc}
           width="200"
           height="200"
-          className="mx-auto mt-8 w-[80%] rotate-[8deg] rounded-[10rem]"
+          className="mx-auto mt-8 w-[80%] rotate-[8deg] rounded-[10rem] "
         />
         <img
           src="/images/3D_elements.png"
@@ -29,18 +31,19 @@ const Description = ({ title, tagline, description }) => {
       </p>
       <p className="dark:text-jacarta-300 mb-10 normal-case">{description}</p>
       <div className="flex justify-center sm:space-x-10">
+        <Link href="/contribute">
         <a
           href="#"
           className="inline-block rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
         >
           Contribute and get a NFT
-        </a>
+        </a></Link>
       </div>
     </div>
   );
 };
 
-export default function ProjectDesc({ left, title, tagline, description }) {
+export default function ProjectDesc({ left, title, tagline, description,imageSrc }) {
   return (
     <div>
       <section className="dark:bg-jacarta-800 relative  lg:py-24">
@@ -54,7 +57,7 @@ export default function ProjectDesc({ left, title, tagline, description }) {
         <div className="container">
           {left ? (
             <div className="lg:flex lg:justify-between">
-              <ImageComponent />
+              <ImageComponent imageSrc={imageSrc}/>
               <Description
                 title={title}
                 tagline={tagline}
@@ -68,7 +71,7 @@ export default function ProjectDesc({ left, title, tagline, description }) {
                 tagline={tagline}
                 description={description}
               />
-              <ImageComponent />
+              <ImageComponent imageSrc={imageSrc}/>
             </div>
           )}
         </div>

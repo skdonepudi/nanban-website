@@ -17,7 +17,7 @@ function About() {
             <h1 className="font-display text-jacarta-700 mb-8 text-4xl font-medium dark:text-white text-center">
               About Us
             </h1>
-            <p className="dark:text-jacarta-300 text-lg leading-normal">
+            <p className="dark:text-jacarta-300 text-lg leading-normal normal-case">
               <span className="pr-8"></span>At Selah Earth, we believe that
               change starts from the ground up. That&apos;s why we&apos;re
               focused on building a better future for the earth, one project at

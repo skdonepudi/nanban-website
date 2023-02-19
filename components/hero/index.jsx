@@ -9,7 +9,7 @@ const Hero_2 = () => {
       {/* <!-- Hero --> */}
       <section className="hero relative py-20 md:pt-32 h-screen">
         <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
-          <figure className="h-[630px] w-full">
+          <figure className="h-screen w-full">
             <Image src="/images/gradient.jpg" alt="gradient" layout="fill" />
           </figure>
         </picture>
@@ -48,7 +48,7 @@ const Hero_2 = () => {
                 </Link>
               </div>
               <div>
-                <Link href="">
+                <Link href="/contribute">
                   <a className="bg-accent shadow-accent-volume hover:bg-accent-dark w-36 rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
                     Contribute and get a NFT{" "}
                     <IoImage className="inline-block text-lg" />

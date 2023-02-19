@@ -1,0 +1,35 @@
+{
+	"name": "Nanban Diamond Class #1",
+	"symbol": "NBN",
+	"image": "https://arweave.net/fKFEAcMe0yq3xb-yvXapzwABPYkozCj7Vx1Mb1d5EBQ",
+	"description": "This NFT signifies your donation to the Nanban Foundation.",
+	"seller_fee_basis_points": 200,
+	"collection": {
+		"name": "Nanban Foundation"
+	},
+	"attributes": [
+		{
+			"trait_type": "class",
+			"value": "diamond"
+		},
+		{
+			"trait_type": "id",
+			"value": "1"
+		}
+	],
+	"properties": {
+		"files": [
+			{
+				"uri": "https://arweave.net/fKFEAcMe0yq3xb-yvXapzwABPYkozCj7Vx1Mb1d5EBQ",
+				"type": "image/jpg"
+			}
+		],
+		"category": "image",
+		"creators": [
+			{
+				"address": "BRtCybNZngZ5cSg9Y3bQHGKEd8Dd2Qv6dy5F27YHGsXN",
+				"share": 100
+			}
+		]
+	}
+}

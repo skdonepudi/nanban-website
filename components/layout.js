@@ -11,9 +11,6 @@ export default function Layout({ children }) {
   return (
     <>
       <Header01 />
-      {/* <Wallet_modal /> */}
-      {/* <BidsModal /> */}
-      {/* <BuyModal /> */}
       <main>{children}</main>
       <Footer />
     </>

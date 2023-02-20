@@ -10,7 +10,7 @@ export default function MainPage() {
           <a> Nanban Foundation NFT Marketplace</a>
         </h1>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
+        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full ">
           <Link href={{ pathname: "/home2", query: { cls: "Silver" } }}>
             <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
               <img
@@ -72,7 +72,7 @@ export default function MainPage() {
                   </span>
                 </div>
                 <Link href={{ pathname: "/nft", query: { cls: "Silver" } }}>
-                  <a className="block w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
+                  <a className="block bg-accent-light dark:bg-accent-dark w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
                     Buy NFT
                   </a>
                 </Link>
@@ -140,7 +140,7 @@ export default function MainPage() {
                   </span>
                 </div>
                 <Link href={{ pathname: "/nft", query: { cls: "Gold" } }}>
-                  <a className="block w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
+                  <a className="block bg-accent-light dark:bg-accent-dark w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
                     Buy NFT
                   </a>
                 </Link>
@@ -208,7 +208,7 @@ export default function MainPage() {
                   </span>
                 </div>
                 <Link href={{ pathname: "/nft", query: { cls: "Diamond" } }}>
-                  <a className="block w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
+                  <a className="block bg-accent-light w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300 dark:bg-accent-dark">
                     Buy NFT
                   </a>
                 </Link>

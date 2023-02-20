@@ -46,7 +46,7 @@ const Description = ({ title, tagline, description }) => {
 export default function ProjectDesc({ left, title, tagline, description,imageSrc }) {
   return (
     <div>
-      <section className="dark:bg-jacarta-800 relative  lg:py-24">
+      <section className="dark:bg-jacarta-800 relative pt-12  lg:py-24">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
           <img
             src="/images/gradient_light.jpg"

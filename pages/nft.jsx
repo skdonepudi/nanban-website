@@ -6,7 +6,7 @@ import {
   FindTransactionSignatureError,
   validateTransactionSignature,
 } from "@solana/pay";
-
+import Image from "next/image";
 import { ANIMATE_BACKGROUND, STATES } from "../lib/constants";
 import { generateQRParams } from "../lib/qrparams";
 import { getSigner } from "../lib/getsigner";
@@ -30,7 +30,6 @@ export default function Home({ cls }) {
   } else if (cls === "Diamond") {
     amount = 10;
   }
- 
 
   // QR code params
   const qrParams = generateQRParams(amount);
@@ -57,9 +56,14 @@ export default function Home({ cls }) {
     data: null,
   });
 
-
   //DATA FOR PDF
-  const [pdfData, setPdfData] = useState({signer: "", date: "", amount: "", transactionId: "",mint: ""});
+  const [pdfData, setPdfData] = useState({
+    signer: "",
+    date: "",
+    amount: "",
+    transactionId: "",
+    mint: "",
+  });
 
   // useEffect(() => {
   //   // navigate to success screen after mint
@@ -90,7 +94,7 @@ export default function Home({ cls }) {
 
     const findAndValidate = async () => {
       // poll for the transaction signature
-      
+
       interval = setInterval(async () => {
         await findTransactionSignature(
           connection,
@@ -130,20 +134,25 @@ export default function Home({ cls }) {
                         const signer = getSigner(
                           result.transaction.message.accountKeys
                         );
-                        
-                        
-        
 
                         setStatus({ state: STATES.AWAIT_FOR_NFT_MINT });
-                        setPdfData({...pdfData, transactionId: result.transaction.signatures[0], date: new Date().toLocaleString(), amount: amount, mint: cls});
+                        setPdfData({
+                          ...pdfData,
+                          transactionId: result.transaction.signatures[0],
+                          date: new Date().toLocaleString(),
+                          amount: amount,
+                          mint: cls,
+                        });
 
                         // mint or transfer the NFT
                         fetch(`${apiUrl}?signer=${signer}&edition=${cls}`)
                           .then((res) => {
                             if (res.ok) {
-                              res.json().then((data) => {setPdfData((pdfData)=>{
-                                return {...pdfData, signer: data.signer}
-                              })});
+                              res.json().then((data) => {
+                                setPdfData((pdfData) => {
+                                  return { ...pdfData, signer: data.signer };
+                                });
+                              });
                               // success
                               setStatus({
                                 state: STATES.NFT_MINT_SUCCESS,
@@ -219,54 +228,59 @@ export default function Home({ cls }) {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <AmbientBackground animate={ANIMATE_BACKGROUND} />
-      <Header />
-
-      <main className={styles.main}>
-        {(status.state === STATES.POLL_FOR_SIGNATURE && (
-          <PollForSignature qrCodeParams={qrParams} />
-        )) ||
-          (status.state === STATES.NFT_MINT_SUCCESS && <SuccessScreen pdfData={pdfData} />) ||
-          (status.state === STATES.AWAIT_FOR_VALIDATION && (
-            <LoadingScreen
-              title="Confirming Transaction"
-              message={STATES.AWAIT_FOR_VALIDATION}
-            />
+    <>
+      <div className={styles.container}>
+        <Header />
+        <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
+          <figure className="h-screen w-full">
+            <Image src="/images/gradient.jpg" alt="gradient" layout="fill" />
+          </figure>
+        </picture>
+        <main className="mt-24">
+          {(status.state === STATES.POLL_FOR_SIGNATURE && (
+            <PollForSignature qrCodeParams={qrParams} />
           )) ||
-          (status.state === STATES.POLL_FOR_FINAL_TRANSACTION && (
-            <LoadingScreen
-              title="Finishing Transaction"
-              message={STATES.POLL_FOR_FINAL_TRANSACTION}
-            />
-          )) ||
-          (status.state === STATES.AWAIT_FOR_NFT_MINT && (
-            <LoadingScreen
-              title={isTransferMode ? "Transferring NFT" : "Minting NFT"}
-              message={
-                isTransferMode
-                  ? STATES.AWAIT_FOR_NFT_TRANSFER
-                  : STATES.AWAIT_FOR_NFT_MINT
-              }
-            />
-          )) ||
-          (status.state === STATES.NFT_MINT_ERROR && (
-            <ErrorScreen
-              message={
-                isTransferMode
-                  ? STATES.NFT_TRANSFER_ERROR
-                  : STATES.NFT_MINT_ERROR
-              }
-              errorData={status.data}
-            />
-          )) ||
-          (status.state === STATES.ERROR && (
-            <ErrorScreen message={STATES.ERROR} errorData={status.data} />
-          ))}
-      </main>
-
-      <footer className={styles.footer}></footer>
-    </div>
+            (status.state === STATES.NFT_MINT_SUCCESS && (
+              <SuccessScreen pdfData={pdfData} />
+            )) ||
+            (status.state === STATES.AWAIT_FOR_VALIDATION && (
+              <LoadingScreen
+                title="Confirming Transaction"
+                message={STATES.AWAIT_FOR_VALIDATION}
+              />
+            )) ||
+            (status.state === STATES.POLL_FOR_FINAL_TRANSACTION && (
+              <LoadingScreen
+                title="Finishing Transaction"
+                message={STATES.POLL_FOR_FINAL_TRANSACTION}
+              />
+            )) ||
+            (status.state === STATES.AWAIT_FOR_NFT_MINT && (
+              <LoadingScreen
+                title={isTransferMode ? "Transferring NFT" : "Minting NFT"}
+                message={
+                  isTransferMode
+                    ? STATES.AWAIT_FOR_NFT_TRANSFER
+                    : STATES.AWAIT_FOR_NFT_MINT
+                }
+              />
+            )) ||
+            (status.state === STATES.NFT_MINT_ERROR && (
+              <ErrorScreen
+                message={
+                  isTransferMode
+                    ? STATES.NFT_TRANSFER_ERROR
+                    : STATES.NFT_MINT_ERROR
+                }
+                errorData={status.data}
+              />
+            )) ||
+            (status.state === STATES.ERROR && (
+              <ErrorScreen message={STATES.ERROR} errorData={status.data} />
+            ))}
+        </main>
+      </div>
+    </>
   );
 }
 

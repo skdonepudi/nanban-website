@@ -7,15 +7,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Head>
-        <title>NFT Vending Machine</title>
+        <title>Selah Earth Foundation</title>
       </Head>
-      <Image
-        src={HEADER_IMAGE}
-        width={1080}
-        height={100}
-        alt="Header"
-        priority
-      />
     </header>
   );
 };

@@ -1,35 +1,41 @@
 import Link from "next/link";
-import data from '../count.json';
+import data from "../count.json";
+import Image from "next/image";
 export default function MainPage() {
   return (
     // A centerd div with 3 NFT images with their name, price and a link to their page
 
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gradient-to-r from-indigo-400 to-cyan-400">
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+        <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
+          <figure className="h-screen w-full">
+            <Image src="/images/gradient.jpg" alt="gradient" layout="fill" />
+          </figure>
+        </picture>
         <h1 className="text-4xl my-10 text-center font-bold">
-          <a> Nanban Foundation NFT Marketplace</a>
+          <a> Selah Earth Foundation NFT Marketplace</a>
         </h1>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full ">
+        <div className="flex flex-wrap items-center justify-around max-w-5xl mt-6 sm:w-full ">
           <Link href={{ pathname: "/home2", query: { cls: "Silver" } }}>
-            <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-110 transition-transform duration-500">
               <img
                 src="/backend/images/1.jpg"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
                 alt={"name"}
               />
               <div className="p-4">
-                <div className="my-2 flex items-center justify-between">
+                <div className="my-2 flex items-center justify-between ">
                   <a href="item.html">
-                    <span className="font-display text-base text-jacarta-700 hover:text-accent dark:text-white">
+                    <span className="font-bold text-md text-jacarta-700 hover:text-accent dark:text-white">
                       Silver class NFT
                     </span>
                   </a>
                   <span className="flex items-center whitespace-nowrap rounded-md border border-jacarta-100 py-1 px-2 dark:border-jacarta-600">
                     <span data-tippy-content="SOL" className="mr-1">
                       <svg
-                        width="15"
-                        height="15"
+                        width="20"
+                        height="20"
                         viewBox="0 0 101 88"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -57,22 +63,22 @@ export default function MainPage() {
                         </defs>
                       </svg>
                     </span>
-                    <span className="text-sm font-medium tracking-tight text-green">
+                    <span className="text-[18] font-medium tracking-tight text-green">
                       0.5 SOL
                     </span>
                   </span>
                 </div>
-                <div className="  flex items-center justify-center space-x-1 rounded-full bg-gray-300 my-4 py-1 px-4 text-sm">
+                <div className="flex items-center justify-center space-x-1 rounded-full bg-gray-300 my-4 py-1 px-4 text-sm">
                   <span
                     className=" whitespace-nowrap text-gray-800 "
                     data-countdown="2022-10-14T10:45:30"
                     data-expired="This auction has ended"
                   >
-                    {data['silver_count']}/20000 NFTs minted
+                    {data["silver_count"]}/20000 NFTs minted
                   </span>
                 </div>
                 <Link href={{ pathname: "/nft", query: { cls: "Silver" } }}>
-                  <a className="block bg-accent-light dark:bg-accent-dark w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
+                  <a className="block bg-accent-light w-full py-2 mt-2 text-center text-white rounded-lg font-medium hover:text-gray-300 dark:bg-accent-dark">
                     Buy NFT
                   </a>
                 </Link>
@@ -80,24 +86,24 @@ export default function MainPage() {
             </div>
           </Link>
           <Link href={{ pathname: "/nft", query: { cls: "Gold" } }}>
-            <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-110 transition-transform duration-500">
               <img
                 src="/backend/images/2.jpg"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
                 alt={"name"}
               />
               <div className="p-4">
                 <div className="my-2 flex items-center justify-between">
                   <a href="item.html">
-                    <span className="font-display text-base text-jacarta-700 hover:text-accent dark:text-white">
+                    <span className="font-bold text-[18] text-jacarta-700 hover:text-accent dark:text-white">
                       Gold class NFT
                     </span>
                   </a>
-                  <span className="flex items-center whitespace-nowrap rounded-md border border-jacarta-100 py-1 px-2 dark:border-jacarta-600">
+                  <span className="flex items-center whitespace-nowrap rounded-md border border-jacarta-200 py-1 px-2 dark:border-jacarta-600">
                     <span data-tippy-content="SOL" className="mr-1">
                       <svg
-                        width="15"
-                        height="15"
+                        width="20"
+                        height="20"
                         viewBox="0 0 101 88"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +131,7 @@ export default function MainPage() {
                         </defs>
                       </svg>
                     </span>
-                    <span className="text-sm font-medium tracking-tight text-green">
+                    <span className="text-[18] font-medium tracking-tight text-green">
                       5 SOL
                     </span>
                   </span>
@@ -136,11 +142,11 @@ export default function MainPage() {
                     data-countdown="2022-10-14T10:45:30"
                     data-expired="This auction has ended"
                   >
-                    {data['gold_count']}/100 NFTs minted
+                    {data["gold_count"]}/100 NFTs minted
                   </span>
                 </div>
                 <Link href={{ pathname: "/nft", query: { cls: "Gold" } }}>
-                  <a className="block bg-accent-light dark:bg-accent-dark w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300">
+                  <a className="block bg-accent-light w-full py-2 mt-2 text-center text-white rounded-lg font-medium hover:text-gray-300 dark:bg-accent-dark">
                     Buy NFT
                   </a>
                 </Link>
@@ -148,24 +154,24 @@ export default function MainPage() {
             </div>
           </Link>
           <Link href={{ pathname: "/nft", query: { cls: "Diamond" } }}>
-            <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-110 transition-transform duration-500">
               <img
                 src="/backend/images/3.jpg"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
                 alt={"name"}
               />
               <div className="p-4">
                 <div className="my-2 flex items-center justify-between">
                   <a href="item.html">
-                    <span className="font-display text-base text-jacarta-700 hover:text-accent dark:text-white">
+                    <span className="font-bold text-[18] text-jacarta-700 hover:text-accent dark:text-white">
                       Diamond class NFT
                     </span>
                   </a>
                   <span className="flex items-center whitespace-nowrap rounded-md border border-jacarta-100 py-1 px-2 dark:border-jacarta-600">
                     <span data-tippy-content="SOL" className="mr-1">
                       <svg
-                        width="15"
-                        height="15"
+                        width="20"
+                        height="20"
                         viewBox="0 0 101 88"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +199,7 @@ export default function MainPage() {
                         </defs>
                       </svg>
                     </span>
-                    <span className="text-sm font-medium tracking-tight text-green">
+                    <span className="text-[18] font-medium tracking-tight text-green">
                       10 SOL
                     </span>
                   </span>
@@ -204,11 +210,11 @@ export default function MainPage() {
                     data-countdown="2022-10-14T10:45:30"
                     data-expired="This auction has ended"
                   >
-                  {data['diamond_count']}/10 NFTs minted
+                    {data["diamond_count"]}/10 NFTs minted
                   </span>
                 </div>
                 <Link href={{ pathname: "/nft", query: { cls: "Diamond" } }}>
-                  <a className="block bg-accent-light w-full py-2 mt-2 text-center font-medium bg-indigo-500 hover:text-gray-300 dark:bg-accent-dark">
+                  <a className="block bg-accent-light w-full py-2 mt-2 text-center text-white rounded-lg font-medium hover:text-gray-300 dark:bg-accent-dark">
                     Buy NFT
                   </a>
                 </Link>

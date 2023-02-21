@@ -7,7 +7,7 @@ const SupportedWallets = () => {
   return (
     <div className={styles["wallets"]}>
       <h3 className={styles["wallets-headline"]}>Supported Wallets</h3>
-      <div className={styles["wallets-logos"]}>
+      <div className="flex space-x-10">
         {SUPPORTED_WALLETS.map((wallet, i) => {
           return (
             <div

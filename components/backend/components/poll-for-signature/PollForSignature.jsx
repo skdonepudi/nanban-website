@@ -31,13 +31,14 @@ const PollForSignature = ({ qrCodeParams }) => {
         <QRCode qrCodeParams={qrCodeParams} />
       </ContentContainer>
 
-      <div className={styles.instructions}>
+      <div className="flex flex-col">
         <Instruction
           stepNumber={currentInstruction}
           stepText={INSTRUCTION_STEPS[currentInstruction - 1]}
         />
+        <SupportedWallets />
       </div>
-      <SupportedWallets />
+
       <CreditLine />
     </div>
   );

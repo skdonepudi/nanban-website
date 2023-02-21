@@ -61,7 +61,8 @@ const SuccessScreen = ({pdfData}) => {
       <h2 className={styles.subtitle}>
         Your NFT has been sent to your wallet!
       </h2>
-      <button onClick={generatePdf} className="white px-3 py-2 bg-green-600/40 rounded-lg mt-10">Download PDF</button>  
+      <button onClick={generatePdf} className="white bg-accent-light dark:bg-accent-dark px-3 py-2 bg-green-600/40 rounded-lg dark:text-white
+      text-black mt-10">Download PDF</button>  
     </ContentContainer>
   );
 };

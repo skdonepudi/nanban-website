@@ -3,17 +3,17 @@ import Link from "next/link";
 const ImageComponent = ({imageSrc}) => {
   return (
     <div className="lg:w-[55%]">
-      <div className="relative grayscale hover:grayscale-0">
+      <div className="relative  group  ">
         <img
           src={imageSrc}
           width="200"
           height="200"
-          className="mx-auto mt-8 w-[80%] rotate-[8deg] rounded-[10rem] "
+          className="mx-auto mt-8 w-[80%] rotate-[8deg] rounded-[10rem] grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out "
         />
         <img
           src="/images/3D_elements.png"
           alt=""
-          className="animate-fly absolute top-0"
+          className="animate-fly absolute top-0  "
         />
       </div>
     </div>
@@ -46,7 +46,7 @@ const Description = ({ title, tagline, description }) => {
 export default function ProjectDesc({ left, title, tagline, description,imageSrc }) {
   return (
     <div>
-      <section className="dark:bg-jacarta-800 relative  lg:py-24">
+      <section className="dark:bg-jacarta-800 relative pt-12  lg:py-24">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
           <img
             src="/images/gradient_light.jpg"
@@ -65,7 +65,7 @@ export default function ProjectDesc({ left, title, tagline, description,imageSrc
               />
             </div>
           ) : (
-            <div className="lg:flex lg:justify-between pb-20 lg:pb-0">
+            <div className="lg:flex flex flex-col-reverse lg:flex-row lg:justify-between ">
               <Description
                 title={title}
                 tagline={tagline}

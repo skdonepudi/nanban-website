@@ -39,12 +39,12 @@
     "react-icons": "^4.7.1",
     "react-modal-video": "^1.2.10",
     "react-redux": "^8.0.2",
+    "react-scroll": "^1.8.9",
     "react-tabs": "^5.1.0",
     "sass": "^1.49.9",
-  
+    "sharp": "^0.30.3",
     "swiper": "^8.2.4",
-    "uuid": "^9.0.0",
-    "sharp": "^0.30.3"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "autoprefixer": "10.4.5",

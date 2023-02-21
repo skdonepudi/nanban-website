@@ -17,7 +17,7 @@ export default function MainPage() {
         </h1>
 
         <div className="flex flex-wrap items-center justify-around max-w-5xl mt-6 sm:w-full ">
-          <Link href={{ pathname: "/home2", query: { cls: "Silver" } }}>
+          <Link href={{ pathname: "/nft", query: { cls: "Silver" } }}>
             <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-110 transition-transform duration-500">
               <img
                 src="/backend/images/1.jpg"

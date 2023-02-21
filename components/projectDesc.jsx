@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const ImageComponent = ({imageSrc}) => {
+const ImageComponent = ({ imageSrc }) => {
   return (
     <div className="lg:w-[55%]">
       <div className="relative  group  ">
@@ -32,18 +32,25 @@ const Description = ({ title, tagline, description }) => {
       <p className="dark:text-jacarta-300 mb-10 normal-case">{description}</p>
       <div className="flex justify-center sm:space-x-10">
         <Link href="/contribute">
-        <a
-          href="#"
-          className="inline-block rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-        >
-          Contribute and get a NFT
-        </a></Link>
+          <a
+            href="#"
+            className="inline-block normal-case rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+          >
+            Contribute and get a NFT
+          </a>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default function ProjectDesc({ left, title, tagline, description,imageSrc }) {
+export default function ProjectDesc({
+  left,
+  title,
+  tagline,
+  description,
+  imageSrc,
+}) {
   return (
     <div>
       <section className="dark:bg-jacarta-800 relative pt-12  lg:py-24">
@@ -57,7 +64,7 @@ export default function ProjectDesc({ left, title, tagline, description,imageSrc
         <div className="container">
           {left ? (
             <div className="lg:flex lg:justify-between">
-              <ImageComponent imageSrc={imageSrc}/>
+              <ImageComponent imageSrc={imageSrc} />
               <Description
                 title={title}
                 tagline={tagline}
@@ -71,7 +78,7 @@ export default function ProjectDesc({ left, title, tagline, description,imageSrc
                 tagline={tagline}
                 description={description}
               />
-              <ImageComponent imageSrc={imageSrc}/>
+              <ImageComponent imageSrc={imageSrc} />
             </div>
           )}
         </div>

@@ -63,7 +63,7 @@ const Hero_2 = () => {
                   offset={-10}
                   duration={130}
                 >
-                  <span className="bg-accent   shadow-accent-volume hover:bg-accent-dark  rounded-full py-3 px-8  text-center font-semibold text-white transition-all normal-case">
+                  <span className="bg-accent cursor-pointer  shadow-accent-volume hover:bg-accent-dark  rounded-full py-3 px-8  text-center font-semibold text-white transition-all normal-case">
                     Contribute and get a NFT{" "}
                     <IoImage className="inline-block text-lg" />
                   </span>

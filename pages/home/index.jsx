@@ -2,13 +2,18 @@ import ProjectDesc from "@/components/projectDesc";
 import React from "react";
 import ImageTitle from "@/components/imageTitle";
 import Hero_2 from "@/components/hero";
+import OurProjects from "@/components/ourProjects";
+
 
 const Home_1 = () => {
   const banner = "/images/banner.jpg";
+
   return (
     <div className="">
       <Hero_2 />
+      <OurProjects/>
       <ProjectDesc
+  id="section1"
         left={true}
         title={"Planting Trees"}
         tagline={"Growing a Greener Future"}
@@ -18,6 +23,7 @@ const Home_1 = () => {
         imageSrc="images/planting.jpg"
       />
       <ProjectDesc
+      id="section2"
         left={false}
         title={"Lake Rejuvenation"}
         tagline={"Bringing Back the Sparkle to Our Lakes"}
@@ -26,7 +32,9 @@ const Home_1 = () => {
         }
         imageSrc="images/lake.jpeg"
       />
+     
       <ProjectDesc
+      id="section3"
         left={true}
         title={"Organic and Sustainable Farming"}
         tagline={"Sowing the Seeds of Change"}

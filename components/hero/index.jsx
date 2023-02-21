@@ -1,8 +1,11 @@
-import Link from "next/link";
+
 import Image from "next/image";
+import Link from "next/link";
 import { HiCurrencyDollar } from "react-icons/hi";
 import { BsCurrencyBitcoin } from "react-icons/bs";
 import { IoImage } from "react-icons/io5";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
 const Hero_2 = () => {
   return (
     <>
@@ -33,27 +36,38 @@ const Hero_2 = () => {
             </p>
             <div className="md:inline-flex space-x-4  space-y-12 md:space-y-0 mt-10 ">
               <div>
-                <Link href="">
+                <Link
+                href=""
+                >
                   <a className="bg-accent shadow-accent-volume hover:bg-accent-dark w-36 rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
                     Donate <HiCurrencyDollar className="inline-block text-lg" />
                   </a>
                 </Link>
               </div>
               <div className="">
-                <Link href="">
+                <Link
+             href=""
+                >
                   <a className="bg-accent shadow-accent-volume hover:bg-accent-dark w-36 rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
                     Donate crypto{" "}
                     <BsCurrencyBitcoin className="inline-block text-lg" />
                   </a>
                 </Link>
               </div>
-              <div>
-                <Link href="/contribute">
-                  <a className="bg-accent shadow-accent-volume hover:bg-accent-dark w-36 rounded-full py-3 px-8 text-center font-semibold text-white transition-all normal-case">
+              <div className="">
+                <ScrollLink
+                  activeClass="active"
+                  to="section1"
+                  spy={true}
+                  smooth={true}
+                  offset={-10}
+                  duration={130}
+                >
+                  <span className="bg-accent   shadow-accent-volume hover:bg-accent-dark  rounded-full py-3 px-8  text-center font-semibold text-white transition-all normal-case">
                     Contribute and get a NFT{" "}
                     <IoImage className="inline-block text-lg" />
-                  </a>
-                </Link>
+                  </span>
+                </ScrollLink>
               </div>
               {/* <Link href="/collection/explore_collection">
 								<a className="text-accent shadow-accent-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white">

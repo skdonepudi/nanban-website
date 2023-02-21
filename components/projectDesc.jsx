@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const ImageComponent = ({ imageSrc }) => {
@@ -20,6 +21,7 @@ const ImageComponent = ({ imageSrc }) => {
   );
 };
 
+
 const Description = ({ title, tagline, description }) => {
   return (
     <div className="py-20 lg:w-[45%] lg:pl-16">
@@ -31,7 +33,7 @@ const Description = ({ title, tagline, description }) => {
       </p>
       <p className="dark:text-jacarta-300 mb-10 normal-case">{description}</p>
       <div className="flex justify-center sm:space-x-10">
-        <Link href="/contribute">
+        <Link href={title==="Planting Trees"?"/contribute":{ pathname: "/nft", query: { cls: title.toLowerCase().split(" ").join("-")} }}>
           <a
             href="#"
             className="inline-block normal-case rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
@@ -52,13 +54,14 @@ export default function ProjectDesc({
   imageSrc,
 }) {
   return (
-    <div>
+    <div id={title==="Planting Trees"?"section1":""}>
       <section className="dark:bg-jacarta-800 relative pt-12  lg:py-24">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
-          <img
+          <Image
+
             src="/images/gradient_light.jpg"
             alt="gradient"
-            className="h-full w-full"
+            layout="fill"
           />
         </picture>
         <div className="container">
